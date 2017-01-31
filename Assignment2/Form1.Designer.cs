@@ -53,14 +53,25 @@
             this.calculate = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.file = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.count = new System.Windows.Forms.ToolStripMenuItem();
+            this.help = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminates = new System.Windows.Forms.ToolStripMenuItem();
+            this.screenClears = new System.Windows.Forms.ToolStripMenuItem();
+            this.font = new System.Windows.Forms.ToolStripMenuItem();
+            this.color = new System.Windows.Forms.ToolStripMenuItem();
+            this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalItems.SuspendLayout();
             this.exteriorFinish.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Price
             // 
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Price.Location = new System.Drawing.Point(4, 26);
+            this.Price.Location = new System.Drawing.Point(4, 29);
             this.Price.Name = "Price";
             this.Price.Padding = new System.Windows.Forms.Padding(1);
             this.Price.Size = new System.Drawing.Size(137, 23);
@@ -72,7 +83,7 @@
             // additionalOptions
             // 
             this.additionalOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.additionalOptions.Location = new System.Drawing.Point(4, 62);
+            this.additionalOptions.Location = new System.Drawing.Point(4, 65);
             this.additionalOptions.Name = "additionalOptions";
             this.additionalOptions.Padding = new System.Windows.Forms.Padding(1);
             this.additionalOptions.Size = new System.Drawing.Size(137, 23);
@@ -140,14 +151,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 26);
+            this.textBox1.Location = new System.Drawing.Point(149, 29);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(94, 20);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 62);
+            this.textBox2.Location = new System.Drawing.Point(149, 65);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(94, 20);
             this.textBox2.TabIndex = 8;
@@ -308,6 +319,82 @@
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.file,
+            this.toolStripTextBox2,
+            this.help});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(441, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // file
+            // 
+            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.terminates});
+            this.file.Name = "file";
+            this.file.Size = new System.Drawing.Size(37, 20);
+            this.file.Text = "File";
+            this.file.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.count,
+            this.screenClears,
+            this.font,
+            this.color});
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(39, 20);
+            this.toolStripTextBox2.Text = "Edit";
+            // 
+            // count
+            // 
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(152, 22);
+            this.count.Text = "Calculate";
+            // 
+            // help
+            // 
+            this.help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.about});
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(44, 20);
+            this.help.Text = "Help";
+            // 
+            // terminates
+            // 
+            this.terminates.Name = "terminates";
+            this.terminates.Size = new System.Drawing.Size(152, 22);
+            this.terminates.Text = "Exit";
+            // 
+            // screenClears
+            // 
+            this.screenClears.Name = "screenClears";
+            this.screenClears.Size = new System.Drawing.Size(152, 22);
+            this.screenClears.Text = "Clear";
+            // 
+            // font
+            // 
+            this.font.Name = "font";
+            this.font.Size = new System.Drawing.Size(152, 22);
+            this.font.Text = "Font ...";
+            // 
+            // color
+            // 
+            this.color.Name = "color";
+            this.color.Size = new System.Drawing.Size(152, 22);
+            this.color.Text = "Color ...";
+            // 
+            // about
+            // 
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(152, 22);
+            this.about.Text = "About";
+            // 
             // SharpAutoCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +419,8 @@
             this.Controls.Add(this.totalPrice);
             this.Controls.Add(this.additionalOptions);
             this.Controls.Add(this.Price);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SharpAutoCenter";
             this.ShowIcon = false;
             this.Text = "Sharp Auto Center";
@@ -340,6 +429,8 @@
             this.additionalItems.PerformLayout();
             this.exteriorFinish.ResumeLayout(false);
             this.exteriorFinish.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,6 +463,16 @@
         private System.Windows.Forms.Button calculate;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem file;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox2;
+        private System.Windows.Forms.ToolStripMenuItem count;
+        private System.Windows.Forms.ToolStripMenuItem help;
+        private System.Windows.Forms.ToolStripMenuItem terminates;
+        private System.Windows.Forms.ToolStripMenuItem screenClears;
+        private System.Windows.Forms.ToolStripMenuItem font;
+        private System.Windows.Forms.ToolStripMenuItem color;
+        private System.Windows.Forms.ToolStripMenuItem about;
     }
 }
 

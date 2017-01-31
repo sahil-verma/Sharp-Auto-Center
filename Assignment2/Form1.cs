@@ -56,5 +56,10 @@ namespace Assignment2
         {
 
         }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Price = new System.Windows.Forms.Label();
             this.additionalOptions = new System.Windows.Forms.Label();
             this.totalPrice = new System.Windows.Forms.Label();
@@ -43,28 +44,30 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.additionalItems = new System.Windows.Forms.GroupBox();
-            this.exteriorFinish = new System.Windows.Forms.GroupBox();
-            this.stereoSystem = new System.Windows.Forms.CheckBox();
-            this.leatherInterior = new System.Windows.Forms.CheckBox();
             this.computerNavigation = new System.Windows.Forms.CheckBox();
-            this.standard = new System.Windows.Forms.RadioButton();
-            this.pearlized = new System.Windows.Forms.RadioButton();
+            this.leatherInterior = new System.Windows.Forms.CheckBox();
+            this.stereoSystem = new System.Windows.Forms.CheckBox();
+            this.exteriorFinish = new System.Windows.Forms.GroupBox();
             this.customizedDetailing = new System.Windows.Forms.RadioButton();
+            this.pearlized = new System.Windows.Forms.RadioButton();
+            this.standard = new System.Windows.Forms.RadioButton();
             this.calculate = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.file = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.count = new System.Windows.Forms.ToolStripMenuItem();
-            this.help = new System.Windows.Forms.ToolStripMenuItem();
-            this.terminates = new System.Windows.Forms.ToolStripMenuItem();
-            this.screenClears = new System.Windows.Forms.ToolStripMenuItem();
-            this.font = new System.Windows.Forms.ToolStripMenuItem();
-            this.color = new System.Windows.Forms.ToolStripMenuItem();
-            this.about = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalItems.SuspendLayout();
             this.exteriorFinish.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +163,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(149, 65);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(94, 20);
             this.textBox2.TabIndex = 8;
             // 
@@ -167,6 +171,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(149, 100);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(94, 20);
             this.textBox3.TabIndex = 9;
             // 
@@ -174,27 +179,32 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(149, 135);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(94, 20);
             this.textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(149, 174);
+            this.textBox5.Location = new System.Drawing.Point(149, 173);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(94, 20);
             this.textBox5.TabIndex = 11;
             // 
             // textBox6
             // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(149, 212);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 20);
+            this.textBox6.Size = new System.Drawing.Size(94, 22);
             this.textBox6.TabIndex = 12;
+            this.textBox6.Text = "0";
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(148, 249);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(94, 20);
             this.textBox7.TabIndex = 13;
             // 
@@ -211,6 +221,39 @@
             this.additionalItems.TabStop = false;
             this.additionalItems.Text = "Additional Items";
             // 
+            // computerNavigation
+            // 
+            this.computerNavigation.AutoSize = true;
+            this.computerNavigation.Location = new System.Drawing.Point(15, 105);
+            this.computerNavigation.Name = "computerNavigation";
+            this.computerNavigation.Size = new System.Drawing.Size(153, 20);
+            this.computerNavigation.TabIndex = 2;
+            this.computerNavigation.Text = "Computer Navigation";
+            this.computerNavigation.UseVisualStyleBackColor = true;
+            this.computerNavigation.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // leatherInterior
+            // 
+            this.leatherInterior.AutoSize = true;
+            this.leatherInterior.Location = new System.Drawing.Point(15, 67);
+            this.leatherInterior.Name = "leatherInterior";
+            this.leatherInterior.Size = new System.Drawing.Size(115, 20);
+            this.leatherInterior.TabIndex = 1;
+            this.leatherInterior.Text = "Leather Interior";
+            this.leatherInterior.UseVisualStyleBackColor = true;
+            this.leatherInterior.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // stereoSystem
+            // 
+            this.stereoSystem.AutoSize = true;
+            this.stereoSystem.Location = new System.Drawing.Point(15, 29);
+            this.stereoSystem.Name = "stereoSystem";
+            this.stereoSystem.Size = new System.Drawing.Size(115, 20);
+            this.stereoSystem.TabIndex = 0;
+            this.stereoSystem.Text = "Stereo System";
+            this.stereoSystem.UseVisualStyleBackColor = true;
+            this.stereoSystem.CheckedChanged += new System.EventHandler(this.stereoSystem_CheckedChanged);
+            // 
             // exteriorFinish
             // 
             this.exteriorFinish.Controls.Add(this.customizedDetailing);
@@ -224,38 +267,25 @@
             this.exteriorFinish.TabStop = false;
             this.exteriorFinish.Text = "Exterior Finish";
             // 
-            // stereoSystem
+            // customizedDetailing
             // 
-            this.stereoSystem.AutoSize = true;
-            this.stereoSystem.Location = new System.Drawing.Point(15, 29);
-            this.stereoSystem.Name = "stereoSystem";
-            this.stereoSystem.Size = new System.Drawing.Size(115, 20);
-            this.stereoSystem.TabIndex = 0;
-            this.stereoSystem.Text = "Stereo System";
-            this.stereoSystem.UseVisualStyleBackColor = true;
-            this.stereoSystem.CheckedChanged += new System.EventHandler(this.stereoSystem_CheckedChanged);
+            this.customizedDetailing.AutoSize = true;
+            this.customizedDetailing.Location = new System.Drawing.Point(15, 106);
+            this.customizedDetailing.Name = "customizedDetailing";
+            this.customizedDetailing.Size = new System.Drawing.Size(152, 20);
+            this.customizedDetailing.TabIndex = 2;
+            this.customizedDetailing.Text = "Customized Detailing";
+            this.customizedDetailing.UseVisualStyleBackColor = true;
             // 
-            // leatherInterior
+            // pearlized
             // 
-            this.leatherInterior.AutoSize = true;
-            this.leatherInterior.Location = new System.Drawing.Point(15, 67);
-            this.leatherInterior.Name = "leatherInterior";
-            this.leatherInterior.Size = new System.Drawing.Size(115, 20);
-            this.leatherInterior.TabIndex = 1;
-            this.leatherInterior.Text = "Leather Interior";
-            this.leatherInterior.UseVisualStyleBackColor = true;
-            this.leatherInterior.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // computerNavigation
-            // 
-            this.computerNavigation.AutoSize = true;
-            this.computerNavigation.Location = new System.Drawing.Point(15, 105);
-            this.computerNavigation.Name = "computerNavigation";
-            this.computerNavigation.Size = new System.Drawing.Size(153, 20);
-            this.computerNavigation.TabIndex = 2;
-            this.computerNavigation.Text = "Computer Navigation";
-            this.computerNavigation.UseVisualStyleBackColor = true;
-            this.computerNavigation.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.pearlized.AutoSize = true;
+            this.pearlized.Location = new System.Drawing.Point(15, 70);
+            this.pearlized.Name = "pearlized";
+            this.pearlized.Size = new System.Drawing.Size(83, 20);
+            this.pearlized.TabIndex = 1;
+            this.pearlized.Text = "Pearlized";
+            this.pearlized.UseVisualStyleBackColor = true;
             // 
             // standard
             // 
@@ -268,26 +298,6 @@
             this.standard.TabStop = true;
             this.standard.Text = "Standard";
             this.standard.UseVisualStyleBackColor = true;
-            // 
-            // pearlized
-            // 
-            this.pearlized.AutoSize = true;
-            this.pearlized.Location = new System.Drawing.Point(15, 70);
-            this.pearlized.Name = "pearlized";
-            this.pearlized.Size = new System.Drawing.Size(83, 20);
-            this.pearlized.TabIndex = 1;
-            this.pearlized.Text = "Pearlized";
-            this.pearlized.UseVisualStyleBackColor = true;
-            // 
-            // customizedDetailing
-            // 
-            this.customizedDetailing.AutoSize = true;
-            this.customizedDetailing.Location = new System.Drawing.Point(15, 106);
-            this.customizedDetailing.Name = "customizedDetailing";
-            this.customizedDetailing.Size = new System.Drawing.Size(152, 20);
-            this.customizedDetailing.TabIndex = 2;
-            this.customizedDetailing.Text = "Customized Detailing";
-            this.customizedDetailing.UseVisualStyleBackColor = true;
             // 
             // calculate
             // 
@@ -322,78 +332,77 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.file,
-            this.toolStripTextBox2,
-            this.help});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(441, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // file
+            // fileToolStripMenuItem
             // 
-            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.terminates});
-            this.file.Name = "file";
-            this.file.Size = new System.Drawing.Size(37, 20);
-            this.file.Text = "File";
-            this.file.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
             // 
-            // toolStripTextBox2
+            // exitToolStripMenuItem
             // 
-            this.toolStripTextBox2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.count,
-            this.screenClears,
-            this.font,
-            this.color});
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(39, 20);
-            this.toolStripTextBox2.Text = "Edit";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
             // 
-            // count
+            // editToolStripMenuItem
             // 
-            this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(152, 22);
-            this.count.Text = "Calculate";
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculateToolStripMenuItem,
+            this.clearToolStripMenuItem,
+            this.fontToolStripMenuItem,
+            this.colorToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // help
+            // helpToolStripMenuItem
             // 
-            this.help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about});
-            this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(44, 20);
-            this.help.Text = "Help";
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
             // 
-            // terminates
+            // aboutToolStripMenuItem
             // 
-            this.terminates.Name = "terminates";
-            this.terminates.Size = new System.Drawing.Size(152, 22);
-            this.terminates.Text = "Exit";
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
             // 
-            // screenClears
+            // calculateToolStripMenuItem
             // 
-            this.screenClears.Name = "screenClears";
-            this.screenClears.Size = new System.Drawing.Size(152, 22);
-            this.screenClears.Text = "Clear";
+            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.calculateToolStripMenuItem.Text = "&Calculate ";
             // 
-            // font
+            // clearToolStripMenuItem
             // 
-            this.font.Name = "font";
-            this.font.Size = new System.Drawing.Size(152, 22);
-            this.font.Text = "Font ...";
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearToolStripMenuItem.Text = "C&lear";
             // 
-            // color
+            // fontToolStripMenuItem
             // 
-            this.color.Name = "color";
-            this.color.Size = new System.Drawing.Size(152, 22);
-            this.color.Text = "Color ...";
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fontToolStripMenuItem.Text = "&Font ...";
             // 
-            // about
+            // colorToolStripMenuItem
             // 
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(152, 22);
-            this.about.Text = "About";
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Text = "C&olor ...";
             // 
             // SharpAutoCenter
             // 
@@ -420,7 +429,6 @@
             this.Controls.Add(this.additionalOptions);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SharpAutoCenter";
             this.ShowIcon = false;
             this.Text = "Sharp Auto Center";
@@ -429,6 +437,7 @@
             this.additionalItems.PerformLayout();
             this.exteriorFinish.ResumeLayout(false);
             this.exteriorFinish.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -463,16 +472,17 @@
         private System.Windows.Forms.Button calculate;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem file;
-        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox2;
-        private System.Windows.Forms.ToolStripMenuItem count;
-        private System.Windows.Forms.ToolStripMenuItem help;
-        private System.Windows.Forms.ToolStripMenuItem terminates;
-        private System.Windows.Forms.ToolStripMenuItem screenClears;
-        private System.Windows.Forms.ToolStripMenuItem font;
-        private System.Windows.Forms.ToolStripMenuItem color;
-        private System.Windows.Forms.ToolStripMenuItem about;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

@@ -241,5 +241,11 @@ namespace Assignment2
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);
         }
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            autoCenterFontDialog.ShowDialog();
+            basePrice.Font = autoCenterFontDialog.Font;
+            amountDue.Font = autoCenterFontDialog.Font;
+        }
     }
 }

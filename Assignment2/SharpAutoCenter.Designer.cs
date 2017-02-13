@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Price = new System.Windows.Forms.Label();
-            this.additionalOptions = new System.Windows.Forms.Label();
+            this.additionalOp = new System.Windows.Forms.Label();
             this.totalPrice = new System.Windows.Forms.Label();
             this.Tax = new System.Windows.Forms.Label();
-            this.total = new System.Windows.Forms.Label();
+            this.sum = new System.Windows.Forms.Label();
             this.Trade = new System.Windows.Forms.Label();
-            this.amountDue = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Due = new System.Windows.Forms.Label();
+            this.basePrice = new System.Windows.Forms.TextBox();
+            this.additionalOptions = new System.Windows.Forms.TextBox();
+            this.subTotal = new System.Windows.Forms.TextBox();
+            this.salesTax = new System.Windows.Forms.TextBox();
+            this.total = new System.Windows.Forms.TextBox();
+            this.tradeInAllowance = new System.Windows.Forms.TextBox();
+            this.amountDue = new System.Windows.Forms.TextBox();
             this.additionalItems = new System.Windows.Forms.GroupBox();
             this.computerNavigation = new System.Windows.Forms.CheckBox();
             this.leatherInterior = new System.Windows.Forms.CheckBox();
@@ -59,12 +59,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalItems.SuspendLayout();
             this.exteriorFinish.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -83,17 +83,17 @@
             this.Price.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Price.Click += new System.EventHandler(this.label1_Click);
             // 
-            // additionalOptions
+            // additionalOp
             // 
-            this.additionalOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.additionalOptions.Location = new System.Drawing.Point(4, 65);
-            this.additionalOptions.Name = "additionalOptions";
-            this.additionalOptions.Padding = new System.Windows.Forms.Padding(1);
-            this.additionalOptions.Size = new System.Drawing.Size(137, 23);
-            this.additionalOptions.TabIndex = 1;
-            this.additionalOptions.Text = "Additional Options :";
-            this.additionalOptions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.additionalOptions.Click += new System.EventHandler(this.label2_Click);
+            this.additionalOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.additionalOp.Location = new System.Drawing.Point(4, 65);
+            this.additionalOp.Name = "additionalOp";
+            this.additionalOp.Padding = new System.Windows.Forms.Padding(1);
+            this.additionalOp.Size = new System.Drawing.Size(137, 23);
+            this.additionalOp.TabIndex = 1;
+            this.additionalOp.Text = "Additional Options :";
+            this.additionalOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.additionalOp.Click += new System.EventHandler(this.label2_Click);
             // 
             // totalPrice
             // 
@@ -118,16 +118,16 @@
             this.Tax.Text = "Sales Tax (13%) :";
             this.Tax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // total
+            // sum
             // 
-            this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total.Location = new System.Drawing.Point(5, 174);
-            this.total.Name = "total";
-            this.total.Padding = new System.Windows.Forms.Padding(1);
-            this.total.Size = new System.Drawing.Size(137, 23);
-            this.total.TabIndex = 4;
-            this.total.Text = "Total : ";
-            this.total.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sum.Location = new System.Drawing.Point(5, 174);
+            this.sum.Name = "sum";
+            this.sum.Padding = new System.Windows.Forms.Padding(1);
+            this.sum.Size = new System.Drawing.Size(137, 23);
+            this.sum.TabIndex = 4;
+            this.sum.Text = "Total : ";
+            this.sum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Trade
             // 
@@ -141,72 +141,81 @@
             this.Trade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Trade.Click += new System.EventHandler(this.label6_Click);
             // 
+            // Due
+            // 
+            this.Due.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Due.Location = new System.Drawing.Point(4, 249);
+            this.Due.Name = "Due";
+            this.Due.Padding = new System.Windows.Forms.Padding(1);
+            this.Due.Size = new System.Drawing.Size(137, 23);
+            this.Due.TabIndex = 6;
+            this.Due.Text = "Amount Due :";
+            this.Due.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // basePrice
+            // 
+            this.basePrice.Location = new System.Drawing.Point(149, 29);
+            this.basePrice.Name = "basePrice";
+            this.basePrice.Size = new System.Drawing.Size(94, 20);
+            this.basePrice.TabIndex = 7;
+            this.basePrice.TextChanged += new System.EventHandler(this._textFields);
+            // 
+            // additionalOptions
+            // 
+            this.additionalOptions.Location = new System.Drawing.Point(149, 65);
+            this.additionalOptions.Name = "additionalOptions";
+            this.additionalOptions.ReadOnly = true;
+            this.additionalOptions.Size = new System.Drawing.Size(94, 20);
+            this.additionalOptions.TabIndex = 8;
+            this.additionalOptions.Click += new System.EventHandler(this._textFields);
+            this.additionalOptions.TextChanged += new System.EventHandler(this.additionalOptions_TextChanged);
+            // 
+            // subTotal
+            // 
+            this.subTotal.Location = new System.Drawing.Point(149, 100);
+            this.subTotal.Name = "subTotal";
+            this.subTotal.ReadOnly = true;
+            this.subTotal.Size = new System.Drawing.Size(94, 20);
+            this.subTotal.TabIndex = 9;
+            this.subTotal.Click += new System.EventHandler(this._textFields);
+            // 
+            // salesTax
+            // 
+            this.salesTax.Location = new System.Drawing.Point(149, 135);
+            this.salesTax.Name = "salesTax";
+            this.salesTax.ReadOnly = true;
+            this.salesTax.Size = new System.Drawing.Size(94, 20);
+            this.salesTax.TabIndex = 10;
+            this.salesTax.Click += new System.EventHandler(this._textFields);
+            // 
+            // total
+            // 
+            this.total.Location = new System.Drawing.Point(149, 173);
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Size = new System.Drawing.Size(94, 20);
+            this.total.TabIndex = 11;
+            this.total.Click += new System.EventHandler(this._textFields);
+            // 
+            // tradeInAllowance
+            // 
+            this.tradeInAllowance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tradeInAllowance.Location = new System.Drawing.Point(149, 212);
+            this.tradeInAllowance.Name = "tradeInAllowance";
+            this.tradeInAllowance.Size = new System.Drawing.Size(94, 22);
+            this.tradeInAllowance.TabIndex = 12;
+            this.tradeInAllowance.Text = "0";
+            this.tradeInAllowance.Click += new System.EventHandler(this._textFields);
+            this.tradeInAllowance.TextChanged += new System.EventHandler(this._textFields);
+            // 
             // amountDue
             // 
-            this.amountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountDue.Location = new System.Drawing.Point(4, 249);
+            this.amountDue.Location = new System.Drawing.Point(148, 249);
             this.amountDue.Name = "amountDue";
-            this.amountDue.Padding = new System.Windows.Forms.Padding(1);
-            this.amountDue.Size = new System.Drawing.Size(137, 23);
-            this.amountDue.TabIndex = 6;
-            this.amountDue.Text = "Amount Due :";
-            this.amountDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(149, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(149, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(149, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(94, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(149, 135);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(94, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(149, 173);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(94, 20);
-            this.textBox5.TabIndex = 11;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(149, 212);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 22);
-            this.textBox6.TabIndex = 12;
-            this.textBox6.Text = "0";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(148, 249);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(94, 20);
-            this.textBox7.TabIndex = 13;
+            this.amountDue.ReadOnly = true;
+            this.amountDue.Size = new System.Drawing.Size(94, 20);
+            this.amountDue.TabIndex = 13;
+            this.amountDue.Click += new System.EventHandler(this._textFields);
             // 
             // additionalItems
             // 
@@ -230,7 +239,7 @@
             this.computerNavigation.TabIndex = 2;
             this.computerNavigation.Text = "Computer Navigation";
             this.computerNavigation.UseVisualStyleBackColor = true;
-            this.computerNavigation.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.computerNavigation.CheckedChanged += new System.EventHandler(this._checkBox);
             // 
             // leatherInterior
             // 
@@ -241,7 +250,7 @@
             this.leatherInterior.TabIndex = 1;
             this.leatherInterior.Text = "Leather Interior";
             this.leatherInterior.UseVisualStyleBackColor = true;
-            this.leatherInterior.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.leatherInterior.CheckedChanged += new System.EventHandler(this._checkBox);
             // 
             // stereoSystem
             // 
@@ -252,7 +261,7 @@
             this.stereoSystem.TabIndex = 0;
             this.stereoSystem.Text = "Stereo System";
             this.stereoSystem.UseVisualStyleBackColor = true;
-            this.stereoSystem.CheckedChanged += new System.EventHandler(this.stereoSystem_CheckedChanged);
+            this.stereoSystem.CheckedChanged += new System.EventHandler(this._checkBox);
             // 
             // exteriorFinish
             // 
@@ -276,6 +285,7 @@
             this.customizedDetailing.TabIndex = 2;
             this.customizedDetailing.Text = "Customized Detailing";
             this.customizedDetailing.UseVisualStyleBackColor = true;
+            this.customizedDetailing.CheckedChanged += new System.EventHandler(this._radioButton);
             // 
             // pearlized
             // 
@@ -286,6 +296,7 @@
             this.pearlized.TabIndex = 1;
             this.pearlized.Text = "Pearlized";
             this.pearlized.UseVisualStyleBackColor = true;
+            this.pearlized.CheckedChanged += new System.EventHandler(this._radioButton);
             // 
             // standard
             // 
@@ -298,6 +309,7 @@
             this.standard.TabStop = true;
             this.standard.Text = "Standard";
             this.standard.UseVisualStyleBackColor = true;
+            this.standard.CheckedChanged += new System.EventHandler(this._radioButton);
             // 
             // calculate
             // 
@@ -308,6 +320,7 @@
             this.calculate.TabIndex = 16;
             this.calculate.Text = "Calculate";
             this.calculate.UseVisualStyleBackColor = true;
+            this.calculate.Click += new System.EventHandler(this._buttonClick);
             // 
             // clear
             // 
@@ -318,6 +331,7 @@
             this.clear.TabIndex = 17;
             this.clear.Text = "Clear";
             this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this._buttonClick);
             // 
             // exit
             // 
@@ -328,6 +342,7 @@
             this.exit.TabIndex = 18;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this._buttonClick);
             // 
             // menuStrip1
             // 
@@ -352,8 +367,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -366,6 +382,34 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
+            // calculateToolStripMenuItem
+            // 
+            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.calculateToolStripMenuItem.Text = "&Calculate ";
+            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.clearToolStripMenuItem.Text = "C&lear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+            // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.fontToolStripMenuItem.Text = "&Font ...";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.colorToolStripMenuItem.Text = "C&olor ...";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -377,32 +421,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
-            // 
-            // calculateToolStripMenuItem
-            // 
-            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.calculateToolStripMenuItem.Text = "&Calculate ";
-            // 
-            // clearToolStripMenuItem
-            // 
-            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.clearToolStripMenuItem.Text = "C&lear";
-            // 
-            // fontToolStripMenuItem
-            // 
-            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.fontToolStripMenuItem.Text = "&Font ...";
-            // 
-            // colorToolStripMenuItem
-            // 
-            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.colorToolStripMenuItem.Text = "C&olor ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // SharpAutoCenter
             // 
@@ -414,25 +435,26 @@
             this.Controls.Add(this.calculate);
             this.Controls.Add(this.exteriorFinish);
             this.Controls.Add(this.additionalItems);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.amountDue);
-            this.Controls.Add(this.Trade);
+            this.Controls.Add(this.tradeInAllowance);
             this.Controls.Add(this.total);
+            this.Controls.Add(this.salesTax);
+            this.Controls.Add(this.subTotal);
+            this.Controls.Add(this.additionalOptions);
+            this.Controls.Add(this.basePrice);
+            this.Controls.Add(this.Due);
+            this.Controls.Add(this.Trade);
+            this.Controls.Add(this.sum);
             this.Controls.Add(this.Tax);
             this.Controls.Add(this.totalPrice);
-            this.Controls.Add(this.additionalOptions);
+            this.Controls.Add(this.additionalOp);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.menuStrip1);
             this.Name = "SharpAutoCenter";
             this.ShowIcon = false;
             this.Text = "Sharp Auto Center";
             this.Load += new System.EventHandler(this.SharpAutoCenter_Load);
+            this.Click += new System.EventHandler(this._buttonClick);
             this.additionalItems.ResumeLayout(false);
             this.additionalItems.PerformLayout();
             this.exteriorFinish.ResumeLayout(false);
@@ -448,19 +470,19 @@
         #endregion
 
         private System.Windows.Forms.Label Price;
-        private System.Windows.Forms.Label additionalOptions;
+        private System.Windows.Forms.Label additionalOp;
         private System.Windows.Forms.Label totalPrice;
         private System.Windows.Forms.Label Tax;
-        private System.Windows.Forms.Label total;
+        private System.Windows.Forms.Label sum;
         private System.Windows.Forms.Label Trade;
-        private System.Windows.Forms.Label amountDue;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label Due;
+        private System.Windows.Forms.TextBox basePrice;
+        private System.Windows.Forms.TextBox additionalOptions;
+        private System.Windows.Forms.TextBox subTotal;
+        private System.Windows.Forms.TextBox salesTax;
+        private System.Windows.Forms.TextBox total;
+        private System.Windows.Forms.TextBox tradeInAllowance;
+        private System.Windows.Forms.TextBox amountDue;
         private System.Windows.Forms.GroupBox additionalItems;
         private System.Windows.Forms.CheckBox computerNavigation;
         private System.Windows.Forms.CheckBox leatherInterior;

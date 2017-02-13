@@ -66,6 +66,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoCenterFontDialog = new System.Windows.Forms.FontDialog();
+            this.autoCenterColorDialog = new System.Windows.Forms.ColorDialog();
             this.additionalItems.SuspendLayout();
             this.exteriorFinish.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -512,6 +513,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.FontDialog autoCenterFontDialog;
+        private System.Windows.Forms.ColorDialog autoCenterColorDialog;
     }
 }
 

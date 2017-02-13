@@ -142,7 +142,7 @@ namespace Assignment2
                         subTotal.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + double.Parse(basePrice.Text)).ToString();
                         salesTax.Text = (double.Parse(subTotal.Text) * 0.13).ToString();
                         total.Text = (double.Parse(subTotal.Text) + double.Parse(salesTax.Text)).ToString();
-                        amountDue.Text = (double.Parse(total.Text) - double.Parse(tradeInAllowance.Text.Equals("") ? "0" : additionalOptions.Text)).ToString();
+                        amountDue.Text = (double.Parse(total.Text) - (tradeInAllowance.Text.Equals("") ? 0 : double.Parse(tradeInAllowance.Text))).ToString();
                     }
                     break;
 
@@ -246,6 +246,14 @@ namespace Assignment2
             autoCenterFontDialog.ShowDialog();
             basePrice.Font = autoCenterFontDialog.Font;
             amountDue.Font = autoCenterFontDialog.Font;
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            autoCenterColorDialog.ShowDialog();
+            basePrice.ForeColor = autoCenterColorDialog.Color;
+            amountDue.BackColor = amountDue.BackColor;
+            amountDue.ForeColor = autoCenterColorDialog.Color;
         }
     }
 }

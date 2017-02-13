@@ -51,24 +51,24 @@ namespace Assignment2
             double storingData;
             switch (_textFields.Name.ToString())
             {
-                case "basePrice":
+                case "basePriceTextBox":
                     //will check if there's any value in text field and it will store number of base price in variable storingData
-                    if (basePrice.Text.Length != 0 && (!double.TryParse(basePrice.Text, out storingData)))
+                    if (basePriceTextBox.Text.Length != 0 && (!double.TryParse(basePriceTextBox.Text, out storingData)))
                     {
                         MessageBox.Show("Enter numbers only", "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
-                        basePrice.ResetText();
+                        basePriceTextBox.ResetText();
                     }
                     break;
 
-                case "tradeInAllowance":
-                    if (tradeInAllowance.Text.Length != 0 && (!double.TryParse(tradeInAllowance.Text, out storingData)))
+                case "tradeInAllowanceTextBox":
+                    if (tradeInAllowanceTextBox.Text.Length != 0 && (!double.TryParse(tradeInAllowanceTextBox.Text, out storingData)))
                     {
                         MessageBox.Show("Enter numbers only", "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
-                        tradeInAllowance.ResetText();
+                        tradeInAllowanceTextBox.ResetText();
                     }
                     break;
             }
@@ -85,39 +85,39 @@ namespace Assignment2
             CheckBox _checkBox = sender as CheckBox;
             switch (_checkBox.Name)
             {
-                case "stereoSystem":
+                case "stereoSystemCheckBox":
 
-                    if (stereoSystem.Checked)
+                    if (stereoSystemCheckBox.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + 425.76).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + 425.76).ToString();
                     }
                     else
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text) - 425.76).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text) - 425.76).ToString();
                     }
                     break;
 
-                case "leatherInterior":
+                case "leatherInteriorCheckBox":
 
-                    if (leatherInterior.Checked)
+                    if (leatherInteriorCheckBox.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + 987.41).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + 987.41).ToString();
                     }
                     else
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text) - 987.41).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text) - 987.41).ToString();
                     }
                     break;
 
-                case "computerNavigation":
+                case "computerNavigationCheckBox":
 
-                    if (computerNavigation.Checked)
+                    if (computerNavigationCheckBox.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + 1741.23).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + 1741.23).ToString();
                     }
                     else
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text) - 1741.23).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text) - 1741.23).ToString();
                     }
                     break;
             }
@@ -134,32 +134,32 @@ namespace Assignment2
             RadioButton _radioButton = sender as RadioButton;
             switch (_radioButton.Name)
             {
-                case "standard":
-                    if (standard.Checked)
+                case "standardRadioButton":
+                    if (standardRadioButton.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text)).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text)).ToString();
                     }
                     break;
 
-                case "pearlized":
-                    if (pearlized.Checked)
+                case "pearlizedRadioButton":
+                    if (pearlizedRadioButton.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + 345.72).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + 345.72).ToString();
                     }
                     else
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) - 345.72).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) - 345.72).ToString();
                     }
                     break;
 
-                case "customizedDetailing":
-                    if (customizedDetailing.Checked)
+                case "customizedDetailingRadioButton":
+                    if (customizedDetailingRadioButton.Checked)
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + 599.99).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + 599.99).ToString();
                     }
                     else
                     {
-                        additionalOptions.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) - 599.99).ToString();
+                        additionalOptionsTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) - 599.99).ToString();
                     }
                     break;
             }
@@ -180,31 +180,31 @@ namespace Assignment2
             {
                 //calculate the amount due
                 case "Calculate":
-                    if (basePrice.Text.Length != 0)
+                    if (basePriceTextBox.Text.Length != 0)
                     {
-                        subTotal.Text = (double.Parse(additionalOptions.Text.Equals("") ? "0" : additionalOptions.Text) + double.Parse(basePrice.Text)).ToString();
-                        salesTax.Text = (double.Parse(subTotal.Text) * 0.13).ToString();
-                        total.Text = (double.Parse(subTotal.Text) + double.Parse(salesTax.Text)).ToString();
-                        amountDue.Text = (double.Parse(total.Text) - (tradeInAllowance.Text.Equals("") ? 0 : double.Parse(tradeInAllowance.Text))).ToString();
-                        amountDue.Text = Double.Parse(amountDue.Text).ToString("C", CultureInfo.CurrentCulture);
+                        subTotalTextBox.Text = (double.Parse(additionalOptionsTextBox.Text.Equals("") ? "0" : additionalOptionsTextBox.Text) + double.Parse(basePriceTextBox.Text)).ToString();
+                        salesTaxTextBox.Text = (double.Parse(subTotalTextBox.Text) * 0.13).ToString();
+                        totalTextBox.Text = (double.Parse(subTotalTextBox.Text) + double.Parse(salesTaxTextBox.Text)).ToString();
+                        amountDueTextBox.Text = (double.Parse(totalTextBox.Text) - (tradeInAllowanceTextBox.Text.Equals("") ? 0 : double.Parse(tradeInAllowanceTextBox.Text))).ToString();
+                        amountDueTextBox.Text = Double.Parse(amountDueTextBox.Text).ToString("C", CultureInfo.CurrentCulture);
                     }
                     break;
 
                 // will clear the text fields
                 case "Clear":
-                    basePrice.ResetText();
-                    subTotal.ResetText();
-                    salesTax.ResetText();
-                    total.ResetText();
-                    tradeInAllowance.Text = "0";
-                    amountDue.ResetText();
-                    standard.Checked = true;
-                    pearlized.Checked = false;
-                    customizedDetailing.Checked = false;
-                    stereoSystem.Checked = false;
-                    leatherInterior.Checked = false;
-                    computerNavigation.Checked = false;
-                    additionalOptions.ResetText();
+                    basePriceTextBox.ResetText();
+                    subTotalTextBox.ResetText();
+                    salesTaxTextBox.ResetText();
+                    totalTextBox.ResetText();
+                    tradeInAllowanceTextBox.Text = "0";
+                    amountDueTextBox.ResetText();
+                    standardRadioButton.Checked = true;
+                    pearlizedRadioButton.Checked = false;
+                    customizedDetailingRadioButton.Checked = false;
+                    stereoSystemCheckBox.Checked = false;
+                    leatherInteriorCheckBox.Checked = false;
+                    computerNavigationCheckBox.Checked = false;
+                    additionalOptionsTextBox.ResetText();
                     break;
                 
                 // will exit the form
@@ -303,7 +303,7 @@ namespace Assignment2
         /// <param name="e"></param>
         private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            calculate.PerformClick();
+            calculateButton.PerformClick();
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace Assignment2
         /// <param name="e"></param>
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clear.PerformClick();
+            clearButton.PerformClick();
         }
 
         /// <summary>
@@ -336,8 +336,8 @@ namespace Assignment2
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoCenterFontDialog.ShowDialog();
-            basePrice.Font = autoCenterFontDialog.Font;
-            amountDue.Font = autoCenterFontDialog.Font;
+            basePriceTextBox.Font = autoCenterFontDialog.Font;
+            amountDueTextBox.Font = autoCenterFontDialog.Font;
         }
 
         /// <summary>
@@ -348,9 +348,9 @@ namespace Assignment2
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoCenterColorDialog.ShowDialog();
-            basePrice.ForeColor = autoCenterColorDialog.Color;
-            amountDue.BackColor = amountDue.BackColor;
-            amountDue.ForeColor = autoCenterColorDialog.Color;
+            basePriceTextBox.ForeColor = autoCenterColorDialog.Color;
+            amountDueTextBox.BackColor = amountDueTextBox.BackColor;
+            amountDueTextBox.ForeColor = autoCenterColorDialog.Color;
         }
     }
 }

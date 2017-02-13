@@ -1,6 +1,6 @@
 ﻿namespace Assignment2
 {
-    partial class SharpAutoCenter
+    partial class SharpAutoForm
     {
         /// <summary>
         /// Required designer variable.

@@ -16,6 +16,7 @@ namespace Assignment2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //will run the splash form
             Application.Run(new SplashForm());
         }
     }

@@ -1,4 +1,13 @@
-﻿using System;
+﻿///<summary>
+///	Name of Programme - Sharp Auto Center
+///	Name - sahil verma
+///	Student Number - 200335300
+///	Date Last Modified - Feb-12, 2017
+///	Short revision history - functionality added, structured, gui, splash form
+///	Description - the app calculates the amount due for the purchases done by the customer
+/// </summary>
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +21,33 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-    public partial class SharpAutoCenter : Form
+    public partial class SharpAutoForm : Form
     {
+        //3. create a reference to the previous form
         public Form previousForm;
 
-        public SharpAutoCenter()
+
+        //CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++
+
+        /// <summary>
+        /// default constructor
+        /// </summary>
+        public SharpAutoForm()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// event handler for the valid inputs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _textFields(object sender, EventArgs e)
         {
             //textbox _textFields = (Button)sender;
             TextBox _textFields = sender as TextBox;
+            //data will be stored for basePrice and trade-inAllowance will be stored in storingData
             double storingData;
             switch (_textFields.Name.ToString())
             {
@@ -51,7 +74,11 @@ namespace Assignment2
             }
         }
 
-
+        /// <summary>
+        /// event handler for check boxes which will give the additional cost for additional items
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _checkBox(object sender, EventArgs e)
         {
             //CheckBox _checkBox = (Button)sender;
@@ -96,6 +123,11 @@ namespace Assignment2
             }
         }
 
+        /// <summary>
+        /// event handler for radioButtons which will give additional cost for exterior finish
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _radioButton(object sender, EventArgs e)
         {
             //RadioButton _radioButton = (Button)sender;
@@ -133,6 +165,12 @@ namespace Assignment2
             }
         }
 
+
+        /// <summary>
+        /// event handler for buttons to calculate, clear and exit the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _buttonClick(object sender, EventArgs e)
         {
             //Button _textFields = (Button)sender;
@@ -140,6 +178,7 @@ namespace Assignment2
 
             switch (_buttonClick.Text.ToString())
             {
+                //calculate the amount due
                 case "Calculate":
                     if (basePrice.Text.Length != 0)
                     {
@@ -167,13 +206,19 @@ namespace Assignment2
                     computerNavigation.Checked = false;
                     additionalOptions.ResetText();
                     break;
-
+                
+                // will exit the form
                 case "Exit":
                     this.Close();
                     break;
             }
         }
 
+        /// <summary>
+        /// event handler for splashForm for closing and opening of sharpAutoCenter form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void autoCenterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you Sure", "Confirm",
@@ -241,28 +286,53 @@ namespace Assignment2
         {
 
         }
-
+        /// <summary>
+        /// to exit the form from menu bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// to calculate the amount due from menu bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             calculate.PerformClick();
         }
 
+        /// <summary>
+        /// to clear the things from menu bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clear.PerformClick();
         }
 
+        /// <summary>
+        /// to give small decription for the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This program calculates the amount due on a New or Used Vehicle", "About",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// event handler to display the font 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoCenterFontDialog.ShowDialog();
@@ -270,6 +340,11 @@ namespace Assignment2
             amountDue.Font = autoCenterFontDialog.Font;
         }
 
+        /// <summary>
+        ///  event handler to display the colors for text
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoCenterColorDialog.ShowDialog();

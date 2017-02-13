@@ -20,7 +20,7 @@ namespace Assignment2
         private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
             //1. intantiate 
-            SharpAutoCenter autoCenterForm = new SharpAutoCenter();
+            SharpAutoForm autoCenterForm = new SharpAutoForm();
 
             //2. pass a reference to the 
             autoCenterForm.previousForm = this;

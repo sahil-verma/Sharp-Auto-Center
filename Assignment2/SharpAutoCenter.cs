@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ namespace Assignment2
 {
     public partial class SharpAutoCenter : Form
     {
+        public Form previousForm;
+
         public SharpAutoCenter()
         {
             InitializeComponent();
@@ -143,6 +147,7 @@ namespace Assignment2
                         salesTax.Text = (double.Parse(subTotal.Text) * 0.13).ToString();
                         total.Text = (double.Parse(subTotal.Text) + double.Parse(salesTax.Text)).ToString();
                         amountDue.Text = (double.Parse(total.Text) - (tradeInAllowance.Text.Equals("") ? 0 : double.Parse(tradeInAllowance.Text))).ToString();
+                        amountDue.Text = Double.Parse(amountDue.Text).ToString("C", CultureInfo.CurrentCulture);
                     }
                     break;
 
@@ -166,6 +171,23 @@ namespace Assignment2
                 case "Exit":
                     this.Close();
                     break;
+            }
+        }
+
+        private void autoCenterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you Sure", "Confirm",
+                                  MessageBoxButtons.OKCancel,
+                                  MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                this.previousForm.Close();
+            }
+
+            else
+            {
+                e.Cancel = true;
             }
         }
 

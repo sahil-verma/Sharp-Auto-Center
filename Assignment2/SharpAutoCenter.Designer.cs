@@ -461,7 +461,6 @@
             this.ShowIcon = false;
             this.Text = "Sharp Auto Center";
             this.Load += new System.EventHandler(this.SharpAutoCenter_Load);
-            this.Click += new System.EventHandler(this._buttonClick);
             this.additionalItems.ResumeLayout(false);
             this.additionalItems.PerformLayout();
             this.exteriorFinish.ResumeLayout(false);
